@@ -9,8 +9,8 @@ TFTPBOOT=/tftpboot/
 
 all: app
 
-app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o pad.o control_module.o clock_module.o
-	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)memory.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
+app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o menus.o pad.o control_module.o clock_module.o
+	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)memory.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)menus.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
 	$(CHAIN)-objcopy $(OBJ)main.elf $(BIN)spl.boot -O binary
 	cp $(BIN)spl.boot $(TFTPBOOT)appTimer.bin
 
@@ -35,6 +35,9 @@ memory.o: $(SRC)memory.c
 uart.o: $(SRC)uart.c                          
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)uart.c -o $(OBJ)uart.o
  
+menus.o: $(SRC)menus.c                          
+	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)menus.c -o $(OBJ)menus.o
+
 pad.o: $(SRC)pad.c                            
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)pad.c -o $(OBJ)pad.o
 

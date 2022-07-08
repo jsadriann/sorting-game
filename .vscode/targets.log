@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Jul  7 21:10:37 2022
+# Make data base, printed on Thu Jul  7 22:28:42 2022
 
 # Variables
 
@@ -239,7 +238,6 @@ SHELL_SESSION_ID = 2e94d086cacf4472b7c39b8849a9a9f0
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
- 
 # environment
 LC_PAPER = pt_BR.UTF-8
 # environment
@@ -285,7 +283,8 @@ VSCODE_PID = 7922
 # environment
 KDE_SESSION_UID = 1000
 # variable set hash-table stats:
-# Load=136/1024=13%, Rehash=0, Collisions=19/179=11%
+ 
+# Load=136/1024=13%, Rehash=0, Collisions=19/180=11%
 
 # Pattern-specific Variable Values
 
@@ -293,9 +292,9 @@ KDE_SESSION_UID = 1000
 
 # Directories
 
-# . (device 2052, inode 265535): 13 files, no impossibilities.
+# . (device 2052, inode 265535): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -307,7 +306,7 @@ link:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 51):
+#  recipe to execute (from 'makefile', line 54):
 	ln -f $(TFTPBOOT)appGpio.bin $(TFTPBOOT)download.bin
 
 all: app
@@ -330,7 +329,7 @@ clock_module.o: src/clock_module.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
+#  recipe to execute (from 'makefile', line 48):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)clock_module.c -o $(OBJ)clock_module.o
 
 # Not a target:
@@ -343,7 +342,7 @@ copy:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 48):
+#  recipe to execute (from 'makefile', line 51):
 	cp $(BIN)spl.boot $(TFTPBOOT)appTimer.bin
 
 # Not a target:
@@ -385,7 +384,7 @@ start.o: src/start.s
 #  recipe to execute (from 'makefile', line 18):
 	$(CHAIN)-as $(AFLAGS) $(SRC)start.s -o $(OBJ)start.o
 
-app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o pad.o control_module.o clock_module.o
+app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o menus.o pad.o control_module.o clock_module.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -393,7 +392,7 @@ app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o pad.o control
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/8=0%
 #  recipe to execute (from 'makefile', line 13):
-	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)memory.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
+	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)memory.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)menus.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
 	$(CHAIN)-objcopy $(OBJ)main.elf $(BIN)spl.boot -O binary
 	cp $(BIN)spl.boot $(TFTPBOOT)appTimer.bin
 
@@ -401,13 +400,13 @@ dump:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 61):
+#  recipe to execute (from 'makefile', line 64):
 	$(CHAIN)-objdump -D $(OBJ)main.elf
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-07 21:06:37.461013446
+#  Last modified 2022-07-07 22:28:19.085500962
 #  File has been updated.
 #  Successfully updated.
 
@@ -435,8 +434,14 @@ control_module.o: src/control_module.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
+#  recipe to execute (from 'makefile', line 45):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)control_module.c -o $(OBJ)control_module.o
+
+# Not a target:
+src/menus.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/control_module.c:
@@ -450,7 +455,6 @@ src/pad.c:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
@@ -473,7 +477,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 54):
+#  recipe to execute (from 'makefile', line 57):
 	rm -rf $(OBJ)*.o
 	rm -rf $(OBJ)*.elf
 	rm -rf $(BIN)*.boot
@@ -511,8 +515,15 @@ pad.o: src/pad.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 39):
+#  recipe to execute (from 'makefile', line 42):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)pad.c -o $(OBJ)pad.o
+
+menus.o: src/menus.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 39):
+	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)menus.c -o $(OBJ)menus.o
 
 # Not a target:
 src/interruption.c:
@@ -528,19 +539,19 @@ memory.o: src/memory.c
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)memory.c -o $(OBJ)memory.o
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=0/73=0%
+# Load=31/1024=3%, Rehash=0, Collisions=0/78=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 43 / storage = 402 B / avg = 9 B
-# current buf: size = 8162 B / used = 402 B / count = 43 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 46 / storage = 433 B / avg = 9 B
+# current buf: size = 8162 B / used = 433 B / count = 46 / avg = 9 B
 
-# strcache performance: lookups = 76 / hit rate = 43%
+# strcache performance: lookups = 81 / hit rate = 43%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=1/76=1%
-# Finished Make data base on Thu Jul  7 21:10:37 2022
+# Load=46/8192=1%, Rehash=0, Collisions=1/81=1%
+# Finished Make data base on Thu Jul  7 22:28:42 2022
 
  

@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  arm-none-eabi-gcc
  *
- *         Author:  José Adriann, jadriannassilva@gmail.com
+ *         Author:  José Adrian, jadriannassilva@gmail.com
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================
@@ -21,6 +21,7 @@
 #include 	"timers.h"
 #include 	"uart.h"
 #include	"memory.h"
+#include 	"menus.h"
 #define DELAY_USE_INTERRUPT			1
 
 
@@ -77,7 +78,6 @@ void ISR_Handler(void){
 
 		case 95:
 			timerIrqHandler(TIMER7);
-			//putString("TIMER INTERRUPT!\n\r",18);
 		break;
 		
 		case 63:
@@ -110,14 +110,12 @@ void ISR_Handler(void){
  * =====================================================================================
  */
 
-
-
 int main(void)
 {
-	//putString("button press!\n\r",15);
 	int count = 0;
-	ucPinNumber up = 21, down = 19, left = 16, right = 17;
+	ucPinNumber up = 13, down = 12, left = 15, right = 14;
 	Direction dir_led = OUTPUT, dir_button = INPUT;
+	char r = '0';
 
 	disableWdt();
 	
@@ -125,39 +123,41 @@ int main(void)
 	 *  initialize GPIO modules
 	 *-----------------------------------------------------------------------------*/
 	Init_module_gpio(GPIO1);
-	Init_module_gpio(GPIO3);
 	
 	timerSetup(TIMER7);
 	/*-----------------------------------------------------------------------------
 	 *  Initialize interruption gpio_1_Int_A and gpio_1_int_B
 	 *-----------------------------------------------------------------------------*/
 	Interrupt_Setup(98); //gpio1_A interruption
-	Interrupt_Setup(99); //gpio1_B interruption
-	Interrupt_Setup(62); //gpio3_A interruption
-	Interrupt_Setup(63); //gpio3_B interruption
 
 #ifdef DELAY_USE_INTERRUPT
 	Interrupt_Setup(95); // timers interruption on DMTIMER7
 #endif
-
-	
-
+		
 	/*-----------------------------------------------------------------------------
 	 *  Set pin for interruption
 	 *-----------------------------------------------------------------------------*/
-	Pin_Interrup_Config(GPIO3,up,0); // interruption 62
-	Pin_Interrup_Config(GPIO3,down,1); // interruption 63
+	Pin_Interrup_Config(GPIO1,up,0); // interruption 98
+	Pin_Interrup_Config(GPIO1,down,0); // interruption 98
 	Pin_Interrup_Config(GPIO1,left,0); // interruption 98
-	Pin_Interrup_Config(GPIO1,right,1); // interruption 99
+	Pin_Interrup_Config(GPIO1,right,0); // interruption 98
 
-	Init_pin_gpio(GPIO3,up,INPUT);
-	Init_pin_gpio(GPIO3,down,INPUT);
+	Init_pin_gpio(GPIO1,up,INPUT);
+	Init_pin_gpio(GPIO1,down,INPUT);
 	Init_pin_gpio(GPIO1,left,INPUT);
 	Init_pin_gpio(GPIO1,right,INPUT);
 
-	while (tente){
-		start_game();
-		tente = false;
+	while(tente){
+		menu_select_game();
+		while((r != '1') && (r != '2') && (r != '3')){
+			r = getCh();
+		}
+		start_game(r);
+		menu_continua();
+		while(r != '1' && r != '2'){
+			r = getCh();
+		}
+		if(r == '2') tente = false;
 	}
 
 	return 0;

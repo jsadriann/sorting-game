@@ -1,5 +1,8 @@
 #include "memory.h"
 #include "timers.h"
+
+void start_memory();
+
 unsigned int game_easy[3][3] = {{0,5,3},
                                 {4,2,8},
                                 {1,6,7}};
@@ -34,12 +37,25 @@ void print_game(){
 
 void clean(){
 
-    putString("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",27);
+    putString("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",33);
 
 }
 
-void start_game(){
+void start_game(char c){
 
+    switch(c){
+        case '1':
+            start_memory();
+        break;
+
+        case '2':
+        break;
+
+    }
+
+}
+
+void start_memory(){
     putString("______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
     delay(1000,TIMER7);
     while(continua){
@@ -54,7 +70,6 @@ void start_game(){
         putCh(msn[i]);
         delay(200,TIMER7);
     }
-
 }
 
 void up(){
