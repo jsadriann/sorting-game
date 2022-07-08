@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Jul  6 21:06:20 2022
+# Make data base, printed on Thu Jul  7 21:10:37 2022
 
 # Variables
 
@@ -19,7 +20,6 @@ DESKTOP_SESSION = plasma
 # environment
 KONSOLE_DBUS_WINDOW = /Windows/1
 # default
- 
 .SHELLFLAGS := -c
 # makefile (from 'makefile', line 6)
 OBJ = obj/
@@ -50,7 +50,7 @@ GDMSESSION = plasma
 # default
 MAKE_VERSION := 4.2.1
 # makefile
-CURDIR := /home/adrian/lab/tpse/Projeto
+CURDIR := /home/adrian/lab/tpse/PROJETO-TPSE
 # makefile
 SHELL = /bin/sh
 # makefile (from 'makefile', line 7)
@@ -90,7 +90,7 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = pt_BR.UTF-8
 # environment
-VSCODE_CWD = /home/adrian/lab/tpse/Projeto
+VSCODE_CWD = /home/adrian/lab/tpse/PROJETO-TPSE
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
@@ -102,7 +102,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
-SESSION_MANAGER = local/Yuno:@/tmp/.ICE-unix/1482,unix/Yuno:/tmp/.ICE-unix/1482
+SESSION_MANAGER = local/Yuno:@/tmp/.ICE-unix/1447,unix/Yuno:/tmp/.ICE-unix/1447
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -126,7 +126,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 XDG_SESSION_DESKTOP = plasma
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-kzuIXI4WAojj/agent.1206
+SSH_AUTH_SOCK = /tmp/ssh-sishOprNN8ug/agent.1258
 # automatic
 %F = $(notdir $%)
 # environment
@@ -136,7 +136,7 @@ XCURSOR_THEME = breeze_cursors
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/adrian/lab/tpse/Projeto
+PWD = /home/adrian/lab/tpse/PROJETO-TPSE
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -144,7 +144,7 @@ KDE_SESSION_VERSION = 5
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1300
+SSH_AGENT_PID = 1383
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = KDE
 # environment
@@ -194,7 +194,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 SHLVL = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f8eeef4d-5db9-4ca0-abeb-59f91a741fc4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b8a12755-58b6-4172-ac26-32faff16fdd7.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -234,15 +234,14 @@ MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-SHELL_SESSION_ID = 0298d67d4a4b49c18dcf3e82d531d2a2
+SHELL_SESSION_ID = 2e94d086cacf4472b7c39b8849a9a9f0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
+ 
 # environment
 LC_PAPER = pt_BR.UTF-8
-# environment
-NO_AT_BRIDGE = 1
 # environment
 QT_ACCESSIBILITY = 1
 # environment
@@ -266,7 +265,7 @@ SUFFIXES :=
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
-KONSOLE_DBUS_SERVICE = :1.94
+KONSOLE_DBUS_SERVICE = :1.63
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -282,11 +281,11 @@ TERM = xterm-256color
 # makefile (from 'makefile', line 3)
 AFLAGS = -mfpu=neon -mcpu=cortex-a8
 # environment
-VSCODE_PID = 11502
+VSCODE_PID = 7922
 # environment
 KDE_SESSION_UID = 1000
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=19/179=11%
+# Load=136/1024=13%, Rehash=0, Collisions=19/179=11%
 
 # Pattern-specific Variable Values
 
@@ -294,12 +293,11 @@ KDE_SESSION_UID = 1000
 
 # Directories
 
-# . (device 2052, inode 266580): 12 files, no impossibilities.
+# . (device 2052, inode 265535): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
- 
 
 # No implicit rules.
 
@@ -309,7 +307,7 @@ link:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 48):
+#  recipe to execute (from 'makefile', line 51):
 	ln -f $(TFTPBOOT)appGpio.bin $(TFTPBOOT)download.bin
 
 all: app
@@ -332,7 +330,7 @@ clock_module.o: src/clock_module.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
+#  recipe to execute (from 'makefile', line 45):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)clock_module.c -o $(OBJ)clock_module.o
 
 # Not a target:
@@ -345,7 +343,7 @@ copy:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
+#  recipe to execute (from 'makefile', line 48):
 	cp $(BIN)spl.boot $(TFTPBOOT)appTimer.bin
 
 # Not a target:
@@ -387,7 +385,7 @@ start.o: src/start.s
 #  recipe to execute (from 'makefile', line 18):
 	$(CHAIN)-as $(AFLAGS) $(SRC)start.s -o $(OBJ)start.o
 
-app: start.o main.o gpio.o interruption.o timers.o uart.o pad.o control_module.o clock_module.o
+app: start.o main.o gpio.o interruption.o timers.o memory.o uart.o pad.o control_module.o clock_module.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -395,7 +393,7 @@ app: start.o main.o gpio.o interruption.o timers.o uart.o pad.o control_module.o
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/8=0%
 #  recipe to execute (from 'makefile', line 13):
-	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
+	$(CHAIN)-ld $(OBJ)start.o $(OBJ)main.o $(OBJ)gpio.o $(OBJ)memory.o $(OBJ)interruption.o $(OBJ)timers.o $(OBJ)uart.o $(OBJ)pad.o $(OBJ)control_module.o $(OBJ)clock_module.o -T $(SRC)memmap.ld -o $(OBJ)main.elf
 	$(CHAIN)-objcopy $(OBJ)main.elf $(BIN)spl.boot -O binary
 	cp $(BIN)spl.boot $(TFTPBOOT)appTimer.bin
 
@@ -403,20 +401,20 @@ dump:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 58):
+#  recipe to execute (from 'makefile', line 61):
 	$(CHAIN)-objdump -D $(OBJ)main.elf
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-05 18:58:14.63051
+#  Last modified 2022-07-07 21:06:37.461013446
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/start.s:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 06:47:50
+#  Last modified 2022-07-07 21:06:37.465013513
 #  File has been updated.
 #  Successfully updated.
 
@@ -424,7 +422,7 @@ uart.o: src/uart.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 33):
+#  recipe to execute (from 'makefile', line 36):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)uart.c -o $(OBJ)uart.o
 
 # Not a target:
@@ -437,7 +435,7 @@ control_module.o: src/control_module.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 39):
+#  recipe to execute (from 'makefile', line 42):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)control_module.c -o $(OBJ)control_module.o
 
 # Not a target:
@@ -452,8 +450,15 @@ src/pad.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 .DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/memory.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -468,7 +473,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 51):
+#  recipe to execute (from 'makefile', line 54):
 	rm -rf $(OBJ)*.o
 	rm -rf $(OBJ)*.elf
 	rm -rf $(BIN)*.boot
@@ -506,7 +511,7 @@ pad.o: src/pad.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 36):
+#  recipe to execute (from 'makefile', line 39):
 	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)pad.c -o $(OBJ)pad.o
 
 # Not a target:
@@ -515,20 +520,27 @@ src/interruption.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+memory.o: src/memory.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 33):
+	$(CHAIN)-gcc $(CFLAGS) $(IPATH) -c $(SRC)memory.c -o $(OBJ)memory.o
+
 # files hash-table stats:
-# Load=27/1024=3%, Rehash=0, Collisions=0/68=0%
+# Load=29/1024=3%, Rehash=0, Collisions=0/73=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 40 / storage = 375 B / avg = 9 B
-# current buf: size = 8162 B / used = 375 B / count = 40 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 43 / storage = 402 B / avg = 9 B
+# current buf: size = 8162 B / used = 402 B / count = 43 / avg = 9 B
 
-# strcache performance: lookups = 71 / hit rate = 43%
+# strcache performance: lookups = 76 / hit rate = 43%
 # hash-table stats:
-# Load=40/8192=0%, Rehash=0, Collisions=1/71=1%
-# Finished Make data base on Wed Jul  6 21:06:20 2022
+# Load=43/8192=1%, Rehash=0, Collisions=1/76=1%
+# Finished Make data base on Thu Jul  7 21:10:37 2022
 
  

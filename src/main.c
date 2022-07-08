@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  arm-none-eabi-gcc
  *
- *         Author:  José Adrian, jadriannassilva@gmail.com
+ *         Author:  José Adriann, jadriannassilva@gmail.com
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================
