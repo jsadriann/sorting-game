@@ -3,16 +3,12 @@
 
 void start_memory();
 
-unsigned int game_easy[3][3] = {{0,5,3},
-                                {4,2,8},
-                                {1,6,7}};
-
-char msn[] = "PARABENS JOGADOR, CONSEGUIU ORDENAR";
+char msn[] = "PARABENS JOGADOR, VOCE GANHOU\n\r";
 
 bool continua = true, pause = true;
 unsigned pos_x = 0, pos_y = 0,pos_x_ant, pos_y_ant;
 
-int ordenou(){
+int ordenou(unsigned int game_easy[3][3]){
 
     if((game_easy[0][0] == 1)&(game_easy[0][1] == 2)&(game_easy[0][2] == 3)
     &(game_easy[1][0] == 4)&(game_easy[1][1] == 5)&(game_easy[1][2] == 6)
@@ -21,7 +17,7 @@ int ordenou(){
     return 0;
     
 }
-void print_game(){
+void print_game(unsigned int game_easy[3][3]){
 
     for (int i = 0; i < 3; i++)
     {
@@ -56,6 +52,9 @@ void start_game(char c){
 }
 
 void start_memory(){
+    unsigned int game_easy[3][3] = {{0,5,3},
+                                    {4,2,8},
+                                    {1,6,7}};
     putString("______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
     delay(1000,TIMER7);
 
@@ -63,19 +62,19 @@ void start_memory(){
 
         clean();
         pause = true;
-        print_game();
+        print_game(game_easy);
         while(pause);
 
         unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
         game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
         game_easy[pos_y][pos_x] = aux;
 
-        if(ordenou()) continua = false;
+        if(ordenou(game_easy)) continua = false;
 
     }
     clean();
-    print_game();
-    for(int i = 0; i < 35; i++){
+    print_game(game_easy);
+    for(int i = 0; i < 31; i++){
         putCh(msn[i]);
         delay(200,TIMER7);
     }
