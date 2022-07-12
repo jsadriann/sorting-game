@@ -35,7 +35,7 @@ void print_game(){
     
 }
 
-void clean(){
+void clean(){ // maneira para limpar a tela
 
     putString("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",33);
 
@@ -58,7 +58,7 @@ void start_game(char c){
 void start_memory(){
     putString("______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
     delay(1000,TIMER7);
-    
+
     while(continua){
 
         clean();
