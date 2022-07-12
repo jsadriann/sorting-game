@@ -58,11 +58,20 @@ void start_game(char c){
 void start_memory(){
     putString("______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
     delay(1000,TIMER7);
+    
     while(continua){
+
         clean();
         pause = true;
         print_game();
         while(pause);
+
+        unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
+        game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
+        game_easy[pos_y][pos_x] = aux;
+
+        if(ordenou()) continua = false;
+
     }
     clean();
     print_game();
@@ -79,11 +88,6 @@ void up(){
     pos_y--;
     if(pos_y < 0) pos_y = 0;
 
-    unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
-    game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
-    game_easy[pos_y][pos_x] = aux;
-
-    if(ordenou()) continua = false;
     pause = false;
 
 }
@@ -95,11 +99,6 @@ void down(){
     pos_y++;
     if(pos_y > 2) pos_y = 2;
 
-    unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
-    game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
-    game_easy[pos_y][pos_x] = aux;
-
-    if(ordenou()) continua = false;
     pause = false;
 
 }
@@ -111,11 +110,6 @@ void left(){
     pos_x--;
     if(pos_x < 0) pos_x = 0;
 
-    unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
-    game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
-    game_easy[pos_y][pos_x] = aux;
-
-    if(ordenou()) continua = false;
     pause = false;
 
 }
@@ -125,13 +119,7 @@ void right(){
     pos_y_ant = pos_y;
     pos_x_ant = pos_x;
     pos_x++;
-    if(pos_y > 2) pos_y = 2;
-
-    unsigned int aux = game_easy[pos_y_ant][pos_x_ant];
-    game_easy[pos_y_ant][pos_x_ant] = game_easy[pos_y][pos_x];
-    game_easy[pos_y][pos_x] = aux;
-
-    if(ordenou()) continua = false;
+    if(pos_x > 2) pos_x = 2;
     pause = false;
 
 }

@@ -1,9 +1,8 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/adrian/lab/tpse/PROJETO-TPSE'
 arm-none-eabi-as -mfpu=neon -mcpu=cortex-a8 src/start.s -o obj/start.o
 arm-none-eabi-gcc -mcpu=cortex-a8 -mfpu=vfp -mfloat-abi=softfp -Iinc/ -c src/main.c -o obj/main.o
 arm-none-eabi-gcc -mcpu=cortex-a8 -mfpu=vfp -mfloat-abi=softfp -Iinc/ -c src/gpio.c -o obj/gpio.o
- 
 arm-none-eabi-gcc -mcpu=cortex-a8 -mfpu=vfp -mfloat-abi=softfp -Iinc/ -c src/interruption.c -o obj/interruption.o
 arm-none-eabi-gcc -mcpu=cortex-a8 -mfpu=vfp -mfloat-abi=softfp -Iinc/ -c src/timers.c -o obj/timers.o
 arm-none-eabi-gcc -mcpu=cortex-a8 -mfpu=vfp -mfloat-abi=softfp -Iinc/ -c src/memory.c -o obj/memory.o

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  7 22:28:42 2022
+# Make data base, printed on Tue Jul 12 16:21:17 2022
 
 # Variables
 
@@ -101,7 +101,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
-SESSION_MANAGER = local/Yuno:@/tmp/.ICE-unix/1447,unix/Yuno:/tmp/.ICE-unix/1447
+SESSION_MANAGER = local/Yuno:@/tmp/.ICE-unix/1467,unix/Yuno:/tmp/.ICE-unix/1467
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -125,7 +125,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 XDG_SESSION_DESKTOP = plasma
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-sishOprNN8ug/agent.1258
+SSH_AUTH_SOCK = /tmp/ssh-eW1RbGQqznQh/agent.1203
 # automatic
 %F = $(notdir $%)
 # environment
@@ -143,7 +143,7 @@ KDE_SESSION_VERSION = 5
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1383
+SSH_AGENT_PID = 1297
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = KDE
 # environment
@@ -179,7 +179,7 @@ XDG_VTNR = 7
 # environment
 LC_TIME = pt_BR.UTF-8
 # environment
-PLATFORMIO_PATH = /home/adrian/.platformio/penv/bin:/home/adrian/.platformio/penv:/home/adrian/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/adrian/lab/tpse/gcc-arm-none-eabi-10.3-2021.10/bin
+PLATFORMIO_PATH = /home/adrian/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/adrian/lab/tpse/gcc-arm-none-eabi-10.3-2021.10/bin
 # environment
 COLORTERM = truecolor
 # environment
@@ -193,7 +193,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 SHLVL = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b8a12755-58b6-4172-ac26-32faff16fdd7.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f3b7c836-4f82-444f-975d-62089e21a238.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -233,7 +233,7 @@ MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-SHELL_SESSION_ID = 2e94d086cacf4472b7c39b8849a9a9f0
+SHELL_SESSION_ID = 266c252dbcaa47cead4d74c93ee3540a
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -263,7 +263,7 @@ SUFFIXES :=
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
-KONSOLE_DBUS_SERVICE = :1.63
+KONSOLE_DBUS_SERVICE = :1.61
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -279,11 +279,10 @@ TERM = xterm-256color
 # makefile (from 'makefile', line 3)
 AFLAGS = -mfpu=neon -mcpu=cortex-a8
 # environment
-VSCODE_PID = 7922
+VSCODE_PID = 2300
 # environment
 KDE_SESSION_UID = 1000
 # variable set hash-table stats:
- 
 # Load=136/1024=13%, Rehash=0, Collisions=19/180=11%
 
 # Pattern-specific Variable Values
@@ -297,6 +296,7 @@ KDE_SESSION_UID = 1000
 # 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
+ 
 
 # No implicit rules.
 
@@ -552,6 +552,6 @@ memory.o: src/memory.c
 # strcache performance: lookups = 81 / hit rate = 43%
 # hash-table stats:
 # Load=46/8192=1%, Rehash=0, Collisions=1/81=1%
-# Finished Make data base on Thu Jul  7 22:28:42 2022
+# Finished Make data base on Tue Jul 12 16:21:18 2022
 
  
