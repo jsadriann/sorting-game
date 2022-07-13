@@ -1,7 +1,7 @@
 #include "menus.h"
 
 void menu_select_game(){
-    putString(UART0,"_|___________|SELECT GAME|__________|_\n\r",40);
+    putString(UART0,"_|_________|WELCOME TO GAME|________|_\n\r",40);
     putString(UART0,"_|___________|SELECT GAME|__________|_\n\r",40);
     putString(UART0," |                                  |\n\r",39);
     putString(UART0," |    1 - ORDENE A MATRIZ           |\n\r",39);
