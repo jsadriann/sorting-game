@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  arm-none-eabi-gcc
  *
- *         Author:  Francisco Helder (FHC), helderhdw@gmail.com
+ *         Author: José Adrian 
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================

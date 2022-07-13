@@ -1,5 +1,22 @@
 #include "timers.h"
 
+/*
+ * =====================================================================================
+ *
+ *       Filename:  gpio.c
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  20/02/2017 10:50:03
+ *       Revision:  none
+ *       Compiler:  arm-none-eabi-gcc
+ *
+ *         Author: José Adrian 
+ *   Organization:  UFC-Quixadá
+ *
+ * =====================================================================================
+ */
 
 #define DELAY_USE_INTERRUPT			1
 static bool flag_timer;

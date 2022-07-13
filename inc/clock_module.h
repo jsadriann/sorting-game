@@ -4,20 +4,21 @@
 /*
  * =====================================================================================
  *
- *       Filename:  clock_module.h
+ *       Filename:  gpio.c
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  20/02/2017 19:44:47
+ *        Created:  20/02/2017 10:50:03
  *       Revision:  none
- *       Compiler:  gcc
+ *       Compiler:  arm-none-eabi-gcc
  *
- *         Author:  Francisco Helder (FHC), helderhdw@gmail.com
+ *         Author: José Adrian 
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================
  */
+
 
 /*-----------------------------------------------------------------------------
  *  ENUM

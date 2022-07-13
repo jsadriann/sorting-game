@@ -1,20 +1,21 @@
 /*
  * =====================================================================================
  *
- *       Filename:  control_module.c
+ *       Filename:  gpio.c
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  20/02/2017 19:43:00
+ *        Created:  20/02/2017 10:50:03
  *       Revision:  none
- *       Compiler:  gcc
+ *       Compiler:  arm-none-eabi-gcc
  *
- *         Author:  Francisco Helder (FHC), helderhdw@gmail.com
+ *         Author: José Adrian 
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================
  */
+
 
 #include "clock_module.h"
 #include "hw_types.h"
