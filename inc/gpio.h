@@ -25,6 +25,20 @@
 #include "soc_AM335x.h"
 #include "hw_types.h"
 
+/**
+ * @brief Clock Modules Domaines bases: TRM 2.1
+ **/
+typedef enum _CKM_MODULE{
+   CKM_PER     = SOC_CM_PER_REGS,
+   CKM_WKUP    = SOC_CM_WKUP_REGS,
+   CKM_DPLL    = SOC_CM_DPLL_REGS,
+   CKM_MPU     = SOC_CM_MPU_REGS,
+   CKM_DEVICE  = SOC_CM_DEVICE_REGS,
+   CKM_RTC     = SOC_CM_RTC_REGS,
+   CKM_GFX     = SOC_CM_GFX_REGS,
+   CKM_CEFUSE  = SOC_CM_CEFUSE_REGS
+}CKM_MODULE;
+
 #define GPIO_REVISION           0x000
 #define GPIO_SYSCONFIG          0x010
 #define GPIO_EOI                0x020

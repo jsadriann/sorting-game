@@ -23,18 +23,12 @@ void print_game(unsigned int game_easy[3][3]){
     {
         for (int j = 0; j < 3; j++)
         {
-            putCh(game_easy[i][j]+'0');
-            putCh(' ');
+            putCh(UART0,game_easy[i][j]+'0');
+            putCh(UART0,' ');
         }
-        putString("\n\r",2);
+        putString(UART0,"\n\r",2);
     }
     
-}
-
-void clean(){ // maneira para limpar a tela
-
-    putString("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",33);
-
 }
 
 void start_game(char c){
@@ -55,12 +49,12 @@ void start_memory(){
     unsigned int game_easy[3][3] = {{0,5,3},
                                     {4,2,8},
                                     {1,6,7}};
-    putString("______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
+    putString(UART0,"______|DEIXE NA SEQUENCIA CORRETA|______\n\r",42);
     delay(1000,TIMER7);
 
     while(continua){
 
-        clean();
+        putString(UART0,"\033[H\033[J\r", 8);
         pause = true;
         print_game(game_easy);
         while(pause);
@@ -72,10 +66,10 @@ void start_memory(){
         if(ordenou(game_easy)) continua = false;
 
     }
-    clean();
+    putString(UART0,"\033[H\033[J\r", 8);
     print_game(game_easy);
     for(int i = 0; i < 31; i++){
-        putCh(msn[i]);
+        putCh(UART0,msn[i]);
         delay(200,TIMER7);
     }
 }

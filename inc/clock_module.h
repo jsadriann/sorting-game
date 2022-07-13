@@ -18,7 +18,6 @@
  *
  * =====================================================================================
  */
-#include <soc_AM335x.h>
 
 /*-----------------------------------------------------------------------------
  *  ENUM
@@ -143,27 +142,32 @@ typedef enum _CKM_MODULE_REG{
    CKM_DIV_M6_DPLL_CORE          = 0xD8
 }CKM_MODULE_REG;
 
-/**
- * @brief Clock Modules Domaines bases: TRM 2.1
- **/
-typedef enum _CKM_MODULE{
-   CKM_PER     = SOC_CM_PER_REGS,
-   CKM_WKUP    = SOC_CM_WKUP_REGS,
-   CKM_DPLL    = SOC_CM_DPLL_REGS,
-   CKM_MPU     = SOC_CM_MPU_REGS,
-   CKM_DEVICE  = SOC_CM_DEVICE_REGS,
-   CKM_RTC     = SOC_CM_RTC_REGS,
-   CKM_GFX     = SOC_CM_GFX_REGS,
-   CKM_CEFUSE  = SOC_CM_CEFUSE_REGS
-}CKM_MODULE;
 
- 
+#define CONTROL_CONF_GPMC_MMODE   					(0x00000007u)
+#define CONTROL_CONF_GPMC_MMODE_SHIFT   		(0x00000000u)
+
+#define CONTROL_CONF_GPMC_PUDEN   					(0x00000008u)
+#define CONTROL_CONF_GPMC_PUDEN_SHIFT   		(0x00000003u)
+
+#define CONTROL_CONF_GPMC_PUTYPESEL   			(0x00000010u)
+#define CONTROL_CONF_GPMC_PUTYPESEL_SHIFT   (0x00000004u)
+
+#define CONTROL_CONF_GPMC_RSVD   						(0x000FFF80u)
+#define CONTROL_CONF_GPMC_RSVD_SHIFT   			(0x00000007u)
+
+#define CONTROL_CONF_GPMC_RXACTIVE   				(0x00000020u)
+#define CONTROL_CONF_GPMC_RXACTIVE_SHIFT   	(0x00000005u)
+
+#define CONTROL_CONF_GPMC_SLEWCTRL   				(0x00000040u)
+#define CONTROL_CONF_GPMC_SLEWCTRL_SHIFT   	(0x00000006u)
+
+
 
 /*-----------------------------------------------------------------------------
  *  Function prototype
  *-----------------------------------------------------------------------------*/
-void ckmSetCLKModuleRegister(CKM_MODULE base, CKM_MODULE_REG offset, unsigned int value);
-unsigned int ckmGetCLKModuleRegister(CKM_MODULE base, CKM_MODULE_REG offset);
+void ckmSetCLKModuleRegister(CKM_MODULE_REG module, unsigned int value);
+unsigned int ckmGetCLKModuleRegister(CKM_MODULE_REG module);
 
 #endif /* __CLOCK_MODULE__H */
 

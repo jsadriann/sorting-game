@@ -9,11 +9,11 @@
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  20/02/2017 10:39:35
+ *        Created:  15/05/2018 14:32:53
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  José Adrian Nascimento Silva, jadriannassilva@gmail.com
+ *         Author:  Francisco Helder (FHC), helderhdw@gmail.com
  *   Organization:  UFC-Quixadá
  *
  * =====================================================================================
@@ -25,14 +25,8 @@
 #include "pad.h"
 #include "control_module.h"
 #include "clock_module.h"
-
-/*****************************************************************************
-**                INTERNAL MACRO DEFINITIONS UART0
-*****************************************************************************/
-#define UART0_BASE 								0x44E09000
-#define UART0_RHR  								0x44E09000
-#define UART0_THR  								0x44E09000
-#define UART0_LSR  								0x44E09014
+#include "interruption.h"
+#include "timers.h"
 
 #define UARTx_OP_R_RHR 			0x0
 #define UARTx_OP_R_IER			0x4
@@ -215,15 +209,6 @@
 #define UARTx_MB_W_MDR3			0x80
 #define UARTx_MB_W_TXDMA		0x84
 
-/*****************************************************************************
-**                INTERNAL MACRO DEFINITIONS UART0
-*****************************************************************************/
-#define UART0_BASE 								0x44E09000
-#define UART0_RHR  								0x44E09000
-#define UART0_THR  								0x44E09000
-#define UART0_LSR  								0x44E09014
-
-
 
 /**
  * @brief UART number (0-5)
@@ -280,10 +265,45 @@ typedef enum _STOP_BIT_t{
 void uartInitModule(UART_t uart, unsigned int baudrate, STOP_BIT_t stopBit, PARITY_BIT_t parity, FLOW_t flowControl);
 
 
-void putCh(char);
-char getCh();
-int putString(char *str, unsigned int);
-int getString(char *buf, unsigned int);
+/**
+ * @fn void uartPutC(UART_t uart, char c)
+ * @brief                  Send a character.
+ * @param[in] uart         Uart to send the character through.
+ * @param[in] c            Character to send.
+ * @return                 void
+ **/
+void putCh(UART_t uart, char c);
+
+
+/**
+ * @fn char uartGetC(UART_t uart)
+ * @brief                  Get a character.
+ * @param[in] uart         Uart to get the character from.
+ * @return                 The character gotten from the uart.
+ **/
+char getCh(UART_t uart);
+
+
+/**
+ * @fn int uartPutString(UART_t uart, char *str, unsigned int length)
+ * @brief                  Send a string.
+ * @param[in] uart         Uart to send the string through.
+ * @param[in] str          Pointer to the string to send.
+ * @param[in] length       Length of the string to send.
+ * @return                 The length sent.
+ **/
+int putString(UART_t uart, char *str, unsigned int length);
+
+/**
+ * @fn int uartGetString(UART_t uart, char *buf, unsigned int length)
+ * @brief                  Get a string.
+ * @param[in]  uart        Uart to get the string from.
+ * @param[out] str         Pointer to the location where to put the string read.
+ * @param[in]  length      Length to read.
+ * @return                 The lenght read
+ **/
+int uartGetString(UART_t uart, char *buf, unsigned int length);
+void uartClearBuffer(UART_t );
 
 static const unsigned int UART_ARRAY_BASE[] = {SOC_UART_0_REGS, SOC_UART_1_REGS, SOC_UART_2_REGS, SOC_UART_3_REGS, SOC_UART_4_REGS, SOC_UART_5_REGS};
 
