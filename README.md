@@ -3,7 +3,7 @@
   para o entendimento de programação em Bare-Metal e operações Bitwase
 ## Board Used
   Para esse projeto foi utilizado a BeagleBone Black desenvolvida pela Texas Instruments
-## Do que tratasse o projeto?
+## Do que trata-se o projeto?
   O projeto mostra a implementação de um jogo de ordenação de números, fazendo uso de vários 
   conceitos e dispositivos fornecidos pela BeagleBone, como __UART__,__GPIO__,__TIMER__,__INTERRUPTS__ dentre
   outros
